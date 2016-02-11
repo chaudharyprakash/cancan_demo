@@ -73,3 +73,6 @@ Please feel free to use a different markup language if you do not plan to run
         # @article is already loaded and authorized
       end
     end
+
+=> define version in .ruby-version file 
+    rvm --ruby-version use ruby-2.0.0-p598
