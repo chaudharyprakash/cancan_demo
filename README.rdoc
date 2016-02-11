@@ -1,0 +1,75 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+== CanCan gem
+
+1) add gem 'cancancan', '~> 1.10' in gemfile.
+
+2) bundle install
+
+3) include the controller methods for CanCan
+    class ApplicationController < ActionController::API
+      include CanCan::ControllerAdditions
+    end
+
+4) generate ability file
+    User permissions are defined in an Ability class
+
+   -> "rails g cancan:ability"
+
+   Ex: 
+    # The first argument to 'can' is the action you are giving the user
+    # permission to do.
+    # If you pass :manage it will apply to every action. Other common actions
+
+    class Ability
+      include CanCan::Ability
+
+      def initialize(user)
+    
+         # Define abilities for the passed in user here. For example:
+        user ||= User.new # guest user (not logged in)
+    
+      if user.admin
+        can :manage, [Article]
+      else
+        can [:show,:index], Article
+     end
+
+
+
+5) therefore the "load_and_authorize_resource" method is provided to  automatically authorize all actions in a RESTful style resource controller
+  
+    class ArticlesController < ApplicationController
+      load_and_authorize_resource
+
+      def show
+        # @article is already loaded and authorized
+      end
+    end

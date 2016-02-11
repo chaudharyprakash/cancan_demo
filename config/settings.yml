@@ -1,0 +1,6 @@
+section:
+  notice:
+    article:
+      create: "your article was created"
+      update: "your article was updated"
+      delete: "your article was deleted"
