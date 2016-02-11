@@ -10,6 +10,8 @@ gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.5'
 # Very simple Roles library without any authorization enforcement supporting scope on resource object.  
 gem "rolify"
+# use for image upload
+gem 'carrierwave'
 # change active admin view
 gem 'active_skin', '~> 0.0.9'
 gem 'activeadmin', github: 'activeadmin'

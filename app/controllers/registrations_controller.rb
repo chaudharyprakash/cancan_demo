@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-
+  before_filter :configure_sign_up_params
   # GET/resource/sign_up
   # def new
   #  super
@@ -17,10 +17,9 @@ class RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT/resource
-  def update
-    super
-    @resource = resource
-  end
+  # def update
+  #   super
+  # end
 
   # DELETE /resource
   def destroy
@@ -42,9 +41,10 @@ class RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
-  # end
+  def configure_sign_up_params
+    p "======================"
+    devise_parameter_sanitizer.for(:sign_up) << :image
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
