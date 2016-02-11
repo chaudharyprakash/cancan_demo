@@ -1,0 +1,38 @@
+<h1> Article </h1>
+
+<%= form_for @articles do |f| %>
+ <% if @articles.errors.any? %>
+    
+      <% @articles.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger">
+        <li><%= msg %></li>
+        </div>
+      <% end %>
+      
+  <% end %>
+  <table class="table">    
+    <tr>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+
+    <tr>
+      <td><%= f.label :published %></td>
+      <td><%= f.text_field :published %></td>
+    </tr>
+
+    <tr>
+      <td><%= f.label :author %></td>
+      <td><%= f.text_field :author %></td>
+    </tr>
+
+    <tr>
+      <td><%= f.label :description %></td>
+      <td><%= f.text_area :description %></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><center><%= f.submit "submit",:class => 'btn' %></td>
+    </tr>
+  </table>  
+  <% end %>

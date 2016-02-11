@@ -1,0 +1,146 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+/* universal */
+
+/* Datapicker*/
+  
+/*end*/
+
+
+body {
+  background-image: url("http://colornames.facts.co/lightskybluecolorcode/lightskybluecolor.png");
+  padding-top: 70px;
+}
+.header_article {
+  color: black;
+  font-size: 2pc;
+  text-align: center;
+}
+.alert{
+  color: green;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+
+h1.h2,h3,h4,h5,h6 {
+  line-height:1;
+}
+h1{
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.8em;
+  color: #fff;
+  
+  letter-spacing: 1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #F70505;
+  text-decoration: none;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+
+.btn {
+  background: #414445;
+  background-image: -webkit-linear-gradient(top, #414445, #383a3b);
+  background-image: -moz-linear-gradient(top, #414445, #383a3b);
+  background-image: -ms-linear-gradient(top, #414445, #383a3b);
+  background-image: -o-linear-gradient(top, #414445, #383a3b);
+  background-image: linear-gradient(to bottom, #414445, #383a3b);
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 3px 8px 3px 8px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.comment_description{
+  margin-left: 60px;
+}
