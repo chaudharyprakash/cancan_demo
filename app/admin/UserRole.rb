@@ -1,7 +1,6 @@
 ActiveAdmin.register UsersRole do
   permit_params :user_id, :role_id
   form do |f|
-    # f.input :user_id, :label => 'Member', :as => :select, :collection => User.all.map{|u| ["#{u.last_name}, #{u.first_name}", u.id]}
     f.input :user_id, :label => 'User Name ', as: :select, collection: User.all.map { |u| [u.email, u.id] }
     f.input :role_id, :label => 'User Role ', as: :select, collection: Role.all.map { |r| [r.name, r.id] }
     f.actions
