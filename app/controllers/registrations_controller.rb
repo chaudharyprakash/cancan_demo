@@ -1,5 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
   before_filter :configure_sign_up_params
+  # before_filter :update_resource
+  before_filter :configure_account_update_params, only: [:update]
+
   # GET/resource/sign_up
   # def new
   #  super
@@ -12,7 +15,6 @@ class RegistrationsController < Devise::RegistrationsController
 
   # GET/resource/edit
   # def edit
-  #  @resource = User.find_by(id: params[:format])
   #  super
   # end
 
@@ -42,15 +44,17 @@ class RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    p "======================"
     devise_parameter_sanitizer.for(:sign_up) << :image
   end
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.for(:account_update) << :attribute
-  # end
+  def configure_account_update_params
+    devise_parameter_sanitizer.for(:account_update) << :image
+  end
 
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
   #   super(resource)
