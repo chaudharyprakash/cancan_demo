@@ -1,0 +1,6 @@
+require 'papercrop/engine'
+require 'papercrop/reg_exp'
+require 'papercrop/model_extension'
+require 'papercrop/helpers'
+require 'papercrop/logger'
+require 'paperclip_processors/papercrop'
