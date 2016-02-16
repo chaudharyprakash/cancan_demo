@@ -1,1 +1,11 @@
-<%= @user.email %>
+<p>
+  <b>Name:</b>
+  <%= @user.email %>
+</p>
+
+<%= image_tag @user.image(:medium) %>
+
+<br />
+
+<%#= link_to 'Edit', edit_landscape_path(@landscape) %> |
+<%#= link_to 'Back', landscapes_path %>

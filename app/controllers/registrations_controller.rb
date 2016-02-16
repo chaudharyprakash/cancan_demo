@@ -1,17 +1,26 @@
 class RegistrationsController < Devise::RegistrationsController
   before_filter :configure_sign_up_params
-  # before_filter :update_resource
   before_filter :configure_account_update_params, only: [:update]
 
   # GET/resource/sign_up
-  # def new
-  #  super
-  # end
+  def new
+     @users = User.new
+  end
 
   # POST/resource
-  # def create
-  #  super
-  # end
+  def create
+
+    @users = User.create(user_params)
+    respond_to do |format|
+      if @users.save
+        sign_in(@users)
+        format.html { redirect_to root_path }
+        # format.html { render  'crop' }
+      else
+        format.html { render action: 'new' }
+      end
+    end
+  end
 
   # GET/resource/edit
   # def edit
@@ -19,9 +28,17 @@ class RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT/resource
-  # def update
-  #   super
-  # end
+  def update
+   @users = User.find_by_email(params[:user][:email])
+   respond_to do |format|
+    if @users.update_attributes(update_user_params)
+      # format.html { redirect_to root_path, notice: 'user was successfully updated.' }
+      format.html { redirect_to show_user_path(@users), notice: 'user was successfully updated.' }
+    else
+      format.html { render action: 'edit' }
+    end
+  end 
+end
 
   # DELETE /resource
   def destroy
@@ -64,4 +81,11 @@ class RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  def user_params
+    params.require(:user).permit(:email,:password, :password_confirmation, :image_original_w, :image_original_h, :image_crop_x, :image_crop_y, :image_crop_w, :image_aspect, :image_box_w,:image_crop_h, :image) 
+  end
+
+  def update_user_params
+    params.require(:user).permit(:image_original_w, :image_original_h, :image_crop_x, :image_crop_y, :image_crop_w, :image_aspect, :image_box_w,:image_crop_h, :image) 
+  end
 end

@@ -6,10 +6,11 @@ class Ability
     
     if user.has_role? :admin
       can :manage, Article
-    elsif user.has_role? :teacher
-      can [:show, :index, :create], Article
-    else
+    elsif user.has_role? :user
       can [:show, :index], Article
+      can [:show, :index, :update], User
+    else
+      can [:show], Article
     end
     
     # The first argument to `can` is the action you are giving the user

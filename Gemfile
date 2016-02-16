@@ -6,12 +6,13 @@ gem 'rails', '4.2.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'devise'
+gem "paperclip"
 gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.5'
 # Very simple Roles library without any authorization enforcement supporting scope on resource object.  
 gem "rolify"
 # use for image upload
-gem 'carrierwave'
+#gem 'carrierwave'
 # change active admin view
 gem 'active_skin', '~> 0.0.9'
 gem 'activeadmin', github: 'activeadmin'
@@ -22,8 +23,10 @@ gem 'config'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+#gem 'carrierwave-crop'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+gem 'protected_attributes'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -58,3 +61,4 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'papercrop'
