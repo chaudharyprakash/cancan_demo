@@ -1,5 +1,9 @@
 class AddImageFromUsers < ActiveRecord::Migration
-  def change
-    add_column :users, :image, :string
+  def self.up
+    add_attachment :users, :image
+  end
+
+  def self.down
+    remove_attachment :users, :image
   end
 end
