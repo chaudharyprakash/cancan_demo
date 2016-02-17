@@ -8,6 +8,10 @@ gem 'sqlite3'
 gem 'devise'
 gem "paperclip"
 gem 'pg'
+# use for pagination
+gem 'will_paginate'
+# use for like/unlike
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'bootstrap-sass', '~> 3.3.5'
 # Very simple Roles library without any authorization enforcement supporting scope on resource object.  
 gem "rolify"
