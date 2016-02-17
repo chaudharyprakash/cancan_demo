@@ -1,0 +1,20 @@
+<h2><b>Popular Album </b></h2> 
+  <%= link_to 'Add Album', new_albume_path, :class => 'btn' %>
+<table class="table">
+  <th> No </th>
+  <th> Name </th>
+  <% @albumes.each_with_index do | album, index | %>
+    <tr>
+      <td><%= index+1 %></td>
+      <%#= link_to album.name, albume_path(album) %>
+      <% if album.pictures.first.present?   %>
+        <td><%= link_to image_tag(album.pictures.first.image,:width => '100px'),albume_path(album) %></td>
+      <% else %>
+        <td><%= link_to image_tag('default.jpg',:width=> '100px',:height => '70px'), albume_path(album)%></td>
+      <% end %>
+      <%if  current_user.albums.pluck(:name).include?(album.name)  %>
+        <td><%= link_to 'Add photo', album_picture_path(album), :class => 'btn' %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

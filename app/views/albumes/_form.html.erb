@@ -1,0 +1,6 @@
+<%= form_for @album, :url => { :action => :create, :controller=>'albumes' } do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.hidden_field :user_id, :value => current_user.id%>
+  <%= f.submit %>
+<% end %>

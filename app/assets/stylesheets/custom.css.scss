@@ -22,9 +22,17 @@ body {
 .alert{
   color: green;
 }
+.pic{
+   display: grid; 
+   padding: 4px; 
 
-section {
-  overflow: auto;
+   line-height: 1.42857143; 
+   background-color: #fff; 
+   border: 1px solid #ddd; 
+   border-radius: 4px; 
+    section {
+    overflow: auto;
+  }
 }
 
 textarea {

@@ -1,0 +1,21 @@
+<% @pictures.each do |picture| %>
+  <div style="float:left; margin: 0 8px 20px 0;">
+    <%= image_tag picture.image, :size => "250x200", :class => "pic" %> 
+
+    <p>
+      <% if !current_user.voted_up_on? picture %>
+        <%= link_to image_tag("like.png",title: 'like', :width => '50px'), like_albume_path(picture), :remote => true %>  
+      <% else %>
+        <%= link_to image_tag("dislike12.png", title: 'unlike', :width => '50px'), unlike_albume_path(picture), :remote => true %>  
+      <% end %>
+      <% if picture.get_likes.size > 0 %>
+        <% if picture.get_likes.size == 1 && current_user %>
+            <span>You like this</span>
+        <% else %>
+          <span><b title = "<%= voter_names(picture) %>" ><%= picture.get_likes.size %></b> People likes this</span>
+        <% end %>  
+      <% end %>
+    </p>
+  </div>
+<% end %>
+<%= will_paginate @pictures %>  

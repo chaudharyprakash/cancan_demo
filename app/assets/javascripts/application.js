@@ -17,3 +17,10 @@
 //= require jquery.jcrop
 //= require papercrop
 //= require_tree .
+
+$(function() {
+  $(".picture_pagination").on("click", ".pagination a", function(){
+    $.getScript(this.href);
+    return false;
+  });
+});
