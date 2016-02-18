@@ -14,6 +14,6 @@ class User < ActiveRecord::Base
   # before_create :assign_default_role
 
   # def assign_default_role
-  #   self.roles << Role.last
+  #   self.roles << 'user'
   # end
 end

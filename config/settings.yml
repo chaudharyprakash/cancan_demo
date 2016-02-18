@@ -4,3 +4,7 @@ section:
       create: "your article was created"
       update: "your article was updated"
       delete: "your article was deleted"
+    album:
+      cretae: "your album was created"
+      update: "your album was updated"
+      delete: "your album was deleted"
